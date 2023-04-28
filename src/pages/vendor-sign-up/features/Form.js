@@ -7,6 +7,7 @@ import Select from "components/general/input/Select";
 import { STATES } from "utils/constants";
 import cleanPayload from "utils/cleanPayload";
 import { useApi } from "hooks/useApi";
+import Link from "next/link";
 const Form = () => {
   const [form, setForm] = useState({
     firstName: "",
@@ -58,13 +59,14 @@ const Form = () => {
       <p className="text-grey-label font-light text-[13px] md:text-[15px] pb-5">
         Our team will reach out to you soon
       </p>
-      <Button
-        text="Go back to landing page"
-        type="button"
-        isDisabled={formDisabled}
-        onClick={handleSubmit}
-        fullWidth
-      />
+      <Link href="/">
+        <Button
+          text="Go back to landing page"
+          type="button"
+          fullWidth
+          onClick={() => {}}
+        />
+      </Link>
     </div>
   );
   return saveSuccess ? (
