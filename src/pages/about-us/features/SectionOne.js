@@ -76,7 +76,7 @@ const SectionOne = () => {
           <div className="flex flex-col justify-center items-center gap-[7px]">
             <div className="hidden sm:flex justify-center items-center w-[250px] h-[250px] rounded-full bg-grey-dark ">
               <Image
-                src="/avatar.png"
+                src="/preston.png"
                 alt="Picture of the author"
                 width={250}
                 height={250}
@@ -84,7 +84,7 @@ const SectionOne = () => {
             </div>
             <div className="sm:hidden justify-center items-center w-[130px] h-[130px] rounded-full bg-grey-dark ">
               <Image
-                src="/avatar.png"
+                src="/preston.png"
                 alt="Picture of the author"
                 width={130}
                 height={130}
@@ -101,7 +101,7 @@ const SectionOne = () => {
           <div className="flex flex-col justify-center items-center gap-[7px]">
             <div className="hidden sm:flex justify-center items-center w-[250px] h-[250px] rounded-full bg-grey-dark ">
               <Image
-                src="/avatar.png"
+                src="/divine.png"
                 alt="Picture of the author"
                 width={250}
                 height={250}
@@ -109,7 +109,7 @@ const SectionOne = () => {
             </div>
             <div className="sm:hidden justify-center items-center w-[130px] h-[130px] rounded-full bg-grey-dark ">
               <Image
-                src="/avatar.png"
+                src="/divine.png"
                 alt="Picture of the author"
                 width={130}
                 height={130}

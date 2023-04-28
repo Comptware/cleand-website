@@ -7,7 +7,7 @@ const Banner = () => {
     <div className="flex flex-col md:flex-row justify-center md:justify-between items-end space-y-10 md:space-y-0 w-full h-fit min-h-[450px] md:space-x-8 website-banner pt-[95px] md:pt-[14px] px-5 md:px-[8%] lg:px-[12%] relative bg-grey-darker z-20 overflow-y-hidden bg-pattern_bg bg-center bg-cover bg-no-repeat">
       <div className="flex flex-col justify-center items-start text-left md:basis-[60%] w-full h-fit z-[5] !ml-0 !mt-0">
         <h1 className="text-blue-50 txt-heading mb-3 md:mb-4 font-poppins font-semibold ">
-          About Cleaned
+          About Cleand
         </h1>
         <p className="text-blue-50 font-light txt-title mb-5 md:mb-6 ">
           At our core, we believe that everyone deserves a clean and comfortable

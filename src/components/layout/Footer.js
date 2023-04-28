@@ -14,7 +14,7 @@ const Footer = () => {
     {
       title: "Contact",
       links: [
-        { title: "help@cleand.com", url: "mailto:help@cleand.com" },
+        { title: "thecleandapp@gmail.com", url: "mailto:thecleandapp@gmail.com" },
         { title: "+234 70 686 200 686", url: "tel:+23470686200686" },
         {
           socials: [
