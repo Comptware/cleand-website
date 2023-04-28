@@ -4,35 +4,32 @@ exports.ids = [185];
 exports.modules = {
 
 /***/ 1693:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 var _circle, _path;
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 var SvgFacebook = function SvgFacebook(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+  return /*#__PURE__*/React.createElement("svg", _extends({
     width: 25,
     height: 24,
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
-  }, props), _circle || (_circle = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("circle", {
+  }, props), _circle || (_circle = /*#__PURE__*/React.createElement("circle", {
     cx: 12.5,
     cy: 12,
     r: 11.8,
     fill: "#F2F8FF",
     stroke: "#F2F8FF",
     strokeWidth: 0.4
-  })), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  })), _path || (_path = /*#__PURE__*/React.createElement("path", {
     d: "M11.099 16.75h2v-4.005H14.9l.198-1.99h-2V9.75a.5.5 0 0 1 .5-.5h1.5v-2h-1.5a2.5 2.5 0 0 0-2.5 2.5v1.005h-1l-.198 1.99h1.198v4.005Z",
     fill: "#101626"
   })));
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SvgFacebook);
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = ((/* unused pure expression or super */ null && (SvgFacebook)));
 
 /***/ }),
 
@@ -192,28 +189,26 @@ const Footer = ()=>{
                     url: "mailto:thecleandapp@gmail.com"
                 },
                 {
-                    title: "+234 70 686 200 686",
-                    url: "tel:+23470686200686"
+                    title: "+234 812 241 8194",
+                    url: "tel:+2348122418194"
                 },
                 {
                     socials: [
-                        {
-                            icon: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_public_facebook_svg__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
-                                className: "scale-[0.9]"
-                            }),
-                            url: "https://facebook.com/cleand"
-                        },
+                        // {
+                        //   icon: <FacebookIcon className="scale-[0.9]" />,
+                        //   url: "https://facebook.com/cleand",
+                        // },
                         {
                             icon: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_public_instagram_svg__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
                                 className: "scale-[0.9]"
                             }),
-                            url: "https://instagram.com/cleand"
+                            url: "https://instagram.com/thecleandapp?igshid=YmMyMTA2M2Y="
                         },
                         {
                             icon: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_public_twitter_svg__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
                                 className: "scale-[0.9]"
                             }),
-                            url: "https://twitter.com/cleand"
+                            url: "https://twitter.com/thecleandapp?s=21&t=vM-Xb-RmMMjNG5WG3lIs_w"
                         }
                     ]
                 }
@@ -232,7 +227,7 @@ const Footer = ()=>{
                 },
                 {
                     title: "Contact Us",
-                    link: "mailto:hello@cleand.com"
+                    link: "mailto:thecleandapp@gmail.com"
                 }
             ]
         }
@@ -450,7 +445,7 @@ const Header = ()=>{
         },
         {
             title: "Contact Us",
-            link: "mailto:hello@cleand.com"
+            link: "mailto:thecleandapp@gmail.com"
         }
     ];
     const changeNavbarBg = ()=>{
