@@ -75,7 +75,7 @@ const Header = () => {
         >
           {headerLinks.map(({ title, link, onClick }) => (
             <div
-              onClick={onClick && onClick}
+              onClick={() => setSidenavOpen(false)}
               className="relative w-full h-full"
               key={title}
             >
@@ -157,7 +157,12 @@ const Header = () => {
             >
               <Button text="Become a vendor" isOutline fullWidth />
             </Link>
-            <Link href="#waitlist" scroll={false} className="w-full">
+            <Link
+              onClick={() => setSidenavOpen(false)}
+              href="#waitlist"
+              scroll={false}
+              className="w-full"
+            >
               <Button text="Join waitlist" className="w-full" />
             </Link>
           </div>
