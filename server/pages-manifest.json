@@ -1,0 +1,23 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/about-us/features/Banner": "pages/about-us/features/Banner.html",
+  "/about-us/features/SectionOne": "pages/about-us/features/SectionOne.html",
+  "/about-us/features": "pages/about-us/features.html",
+  "/about-us": "pages/about-us.html",
+  "/api/hello": "pages/api/hello.js",
+  "/home/features/Banner": "pages/home/features/Banner.html",
+  "/home/features/Customers": "pages/home/features/Customers.html",
+  "/home/features/SectionOne": "pages/home/features/SectionOne.html",
+  "/home/features/SectionTwo": "pages/home/features/SectionTwo.html",
+  "/home/features/Vendors": "pages/home/features/Vendors.html",
+  "/home/features": "pages/home/features.html",
+  "/home": "pages/home.html",
+  "/": "pages/index.html",
+  "/legal/privacy-policy": "pages/legal/privacy-policy.html",
+  "/vendor-sign-up/features/Form": "pages/vendor-sign-up/features/Form.html",
+  "/vendor-sign-up/features": "pages/vendor-sign-up/features.html",
+  "/vendor-sign-up": "pages/vendor-sign-up.html",
+  "/404": "pages/404.html"
+}
