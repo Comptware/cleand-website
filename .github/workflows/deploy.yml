@@ -25,7 +25,10 @@ jobs:
       run: yarn build
 
     - name: Deploy to DigitalOcean App Platform
-      uses: digitalocean/github-action@v3.3
+      uses: digitalocean/action-do-app@v1
       with:
+        name: Cleand
+        region: nyc
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         app_spec: './.do/app.yaml'
-        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        do_token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
