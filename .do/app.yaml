@@ -3,7 +3,7 @@ region: nyc
 services:
 - name: web
   github:
-    repo: <github-username>/<repository-name>
+    repo: Comptware/cleand-website
     branch: main
   environment_slug: node-js
   routes:
