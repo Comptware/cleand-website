@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import Loader from "assets/icons/loader/loader.svg";
 const Button = ({
   type,
   isOutline,
@@ -58,7 +58,15 @@ const Button = ({
       href={href}
     >
       {isLoading ? (
-        <div className={btnClass}></div>
+        <div className={`${btnClass} relative`}>
+          <span className="absolute left-0 top-0 right-0 bottom-0 m-auto w-fit flex justify-center items-center animate-spin ">
+            <Loader />
+          </span>
+
+          <span className={`${textClass} !text-transparent relative`}>
+            {text}
+          </span>
+        </div>
       ) : (
         <div className={`${btnClass} space-x-2 ${buttonClass}`}>
           {icon && <div>{icon}</div>}

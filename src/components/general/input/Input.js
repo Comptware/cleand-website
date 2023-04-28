@@ -157,7 +157,7 @@ const Input = ({
                   ? showPassword
                     ? "text"
                     : "password"
-                  : "text"
+                  : type
               }
               value={value}
               onChange={({ target }) => {
@@ -178,6 +178,7 @@ const Input = ({
               style={{
                 paddingLeft: prefix && prefixRef?.current?.offsetWidth + 15,
               }}
+              required={required}
               {...rest}
             />
           )}

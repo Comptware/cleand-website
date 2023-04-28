@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import Button from "components/general/button/Button";
 import Input from "components/general/input/Input";
+import { useApi } from "hooks/useApi";
+
 const Banner = () => {
   const [email, setEmail] = useState("");
+  const { registerUser, userLoading } = useApi({ userData: { email } });
+  const handleRegisterUser = (e) => {
+    e.preventDefault();
+    registerUser();
+  };
   return (
     <div className="flex flex-col md:flex-row justify-center md:justify-between items-end space-y-10 md:space-y-0 w-full h-fit min-h-[450px] md:space-x-8 website-banner pt-[95px] md:pt-[14px] px-5 md:px-[8%] lg:px-[12%] relative bg-grey-darker z-20 overflow-y-hidden bg-pattern_bg bg-center bg-cover bg-no-repeat">
       <div className="flex flex-col justify-center items-start text-left md:basis-[60%] w-full h-fit z-[5] !ml-0 !mt-0">
@@ -18,38 +25,38 @@ const Banner = () => {
           Be the first to know when we launch.
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-start items-center w-full gap-4 mb-1.5">
+        <form
+          onSubmit={handleRegisterUser}
+          className="flex flex-col sm:flex-row justify-start items-center w-full gap-4 mb-1.5"
+        >
           <Input
+            required
             type="email"
             placeholder="Enter your email address"
             value={email}
             onChangeFunc={(val) => setEmail(val)}
           />
-          <a
-            href="https://calendly.com/bani-inc/sales/"
-            target="_blank"
-            rel="noreferrer"
-            className="w-[60%]"
-          >
-            <Button
-              text="Notify me"
-              onClick={() =>
-                window?.dataLayer?.push({
-                  event: "event",
-                  eventProps: {
-                    category: "Notify me",
-                    action: "Notify me",
-                    label: "Notify me - home hero section",
-                    value: 1,
-                  },
-                })
-              }
-              height="h-[42px] sm:h-[44px]"
-              textClass="text-[15px]"
-              className="w-full sm:w-fit"
-            />
-          </a>
-        </div>
+
+          <Button
+            text="Notify me"
+            onClick={() =>
+              window?.dataLayer?.push({
+                event: "event",
+                eventProps: {
+                  category: "Notify me",
+                  action: "Notify me",
+                  label: "Notify me - home hero section",
+                  value: 1,
+                },
+              })
+            }
+            type="submit"
+            isLoading={userLoading}
+            height="h-[42px] sm:h-[44px]"
+            textClass="text-[15px]"
+            className="w-full sm:w-fit"
+          />
+        </form>
 
         <span className="text-blue-50 font-light txt-base mb-3 md:mb-9 ">
           *Don&apos;t worry we will not spam you {":)"}

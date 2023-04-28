@@ -7,14 +7,17 @@ import InstagramIcon from "../../../public/instagram.svg";
 import TwitterIcon from "../../../public/twitter.svg";
 import Button from "components/general/button/Button";
 import Input from "components/general/input/Input";
-
+import { useApi } from "hooks/useApi";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const footerLinks = [
     {
       title: "Contact",
       links: [
-        { title: "thecleandapp@gmail.com", url: "mailto:thecleandapp@gmail.com" },
+        {
+          title: "thecleandapp@gmail.com",
+          url: "mailto:thecleandapp@gmail.com",
+        },
         { title: "+234 70 686 200 686", url: "tel:+23470686200686" },
         {
           socials: [
@@ -47,7 +50,11 @@ const Footer = () => {
       ],
     },
   ];
-
+  const { registerUser, userLoading } = useApi({ userData: { email } });
+  const handleRegisterUser = (e) => {
+    e.preventDefault();
+    registerUser();
+  };
   return (
     <footer className="website-footer flex flex-col justify-center items-center w-full py-8 md:py-12 px-5 md:px-[8%] lg:px-[12%] bg-grey-dark space-y-6 md:space-y-3 relative overflow-hidden">
       <div className="flex flex-row justify-between items-center w-full">
@@ -126,38 +133,38 @@ const Footer = () => {
               Be the first to know when we launch.
             </p>
 
-            <div className="flex flex-col justify-start items-center w-full gap-4 mb-1.5">
+            <form
+              onSubmit={handleRegisterUser}
+              className="flex flex-col justify-start items-center w-full gap-4 mb-1.5"
+            >
               <Input
+                required
                 type="email"
                 placeholder="Enter your email address"
                 value={email}
                 onChangeFunc={(val) => setEmail(val)}
               />
-              <a
-                href="https://calendly.com/cleand-inc/sales/"
-                target="_blank"
-                rel="noreferrer"
+
+              <Button
+                text="Notify me"
+                onClick={() =>
+                  window?.dataLayer?.push({
+                    event: "event",
+                    eventProps: {
+                      category: "Notify me",
+                      action: "Notify me",
+                      label: "Notify me - home hero section",
+                      value: 1,
+                    },
+                  })
+                }
+                type="submit"
+                isLoading={userLoading}
+                height="h-[42px] sm:h-[44px]"
+                textClass="text-[15px]"
                 className="w-full"
-              >
-                <Button
-                  text="Notify me"
-                  onClick={() =>
-                    window?.dataLayer?.push({
-                      event: "event",
-                      eventProps: {
-                        category: "Notify me",
-                        action: "Notify me",
-                        label: "Notify me - home hero section",
-                        value: 1,
-                      },
-                    })
-                  }
-                  height="h-[42px] sm:h-[44px]"
-                  textClass="text-[15px]"
-                  className="w-full"
-                />
-              </a>
-            </div>
+              />
+            </form>
 
             <span className="text-blue-50 font-light txt-base mb-3 md:mb-9 ">
               *Don&apos;t worry we will not spam you {":)"}

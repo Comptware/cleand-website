@@ -6,17 +6,17 @@ import Input from "components/general/input/Input";
 import Select from "components/general/input/Select";
 import { STATES } from "utils/constants";
 import cleanPayload from "utils/cleanPayload";
-
+import { useApi } from "hooks/useApi";
 const Form = () => {
   const [form, setForm] = useState({
-    first_name: "",
-    last_name: "",
-    business_name: "",
-    business_category: "Cleaning Service",
-    business_address: "",
+    firstName: "",
+    lastName: "",
+    businessName: "",
+    category: "Cleaning Service",
+    address: "",
     country: "Nigeria",
     state: "",
-    phone_number: "",
+    phoneNumber: "",
     email: "",
     state: "",
   });
@@ -24,8 +24,8 @@ const Form = () => {
   const [saveSuccess, setSaveSuccess] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let payload = { ...form };
-    payload = cleanPayload(payload);
+    console.log(form);
+    await registerVendor();
     setSaveSuccess(true);
   };
   const handleChange = (prop, val) => {
@@ -35,6 +35,17 @@ const Form = () => {
     () => !Object.values(form).every((x) => x),
     [form]
   );
+
+  const vendorData = useMemo(() => {
+    let payload = { ...form, state: form?.state?.value, country: "" };
+    payload = cleanPayload(payload);
+    return payload;
+  }, [form]);
+
+  const { registerVendor, vendorLoading } = useApi({
+    vendorData,
+  });
+
   const successPage = () => (
     <div className="flex flex-col mt-[-50px] md:mt-2 gap-2 items-center justify-center w-full min-h-[300px] h-screen">
       <span className="pb-2">
@@ -75,40 +86,40 @@ const Form = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-between items-start w-full">
           <Input
             label="First name"
-            value={form?.first_name}
-            onChangeFunc={(val) => handleChange("first_name", val)}
+            value={form?.firstName}
+            onChangeFunc={(val) => handleChange("firstName", val)}
             placeholder="Enter first name"
             required
           />
 
           <Input
             label="Last name"
-            value={form?.last_name}
-            onChangeFunc={(val) => handleChange("last_name", val)}
+            value={form?.lastName}
+            onChangeFunc={(val) => handleChange("lastName", val)}
             placeholder="Enter last name"
             required
           />
         </div>
         <Input
           label="Business name"
-          value={form?.business_name}
-          onChangeFunc={(val) => handleChange("business_name", val)}
+          value={form?.businessName}
+          onChangeFunc={(val) => handleChange("businessName", val)}
           placeholder="Enter business name"
           required
         />
 
         <Input
           label="Business category"
-          value={form?.business_category}
-          onChangeFunc={(val) => handleChange("business_category", val)}
+          value={form?.category}
+          onChangeFunc={(val) => handleChange("category", val)}
           placeholder="Enter business category"
           required
           isDisabled
         />
         <Input
           label="Business address"
-          value={form?.business_address}
-          onChangeFunc={(val) => handleChange("business_address", val)}
+          value={form?.address}
+          onChangeFunc={(val) => handleChange("address", val)}
           placeholder="Enter business address"
           required
         />
@@ -142,8 +153,8 @@ const Form = () => {
 
         <PhoneNumber
           label="Business phone number"
-          value={form.phone_number}
-          onPhoneChange={(val) => handleChange("phone_number", val)}
+          value={form.phoneNumber}
+          onPhoneChange={(val) => handleChange("phoneNumber", val)}
           placeholder="Enter business phone number"
           // labelClass="!text-black regular-font"
           required
@@ -151,9 +162,10 @@ const Form = () => {
 
         <Button
           text="Sign up"
-          type="submit"
           isDisabled={formDisabled}
           onClick={handleSubmit}
+          type="submit"
+          isLoading={vendorLoading}
           fullWidth
         />
       </form>

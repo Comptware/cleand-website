@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 import Logo from "assets/icons/logo.svg";
+import Toast from "components/general/toast/toast";
 import LogoWhite from "../../../public/logo_white.svg";
 import { Button } from "components/general/button";
 import Hamburger from "./hamburger";
@@ -80,6 +81,7 @@ const Header = () => {
             >
               <Link
                 href={link}
+                scroll={link === "/#faqs" ? false : true}
                 className={`flex justify-center items-center hover:text-blue text-grey-blue font-semibold space-x-1.5 mb-[6px] py-1  px-2.5 icon-text transition-all duration-300 ease-in-out
                  
                  ${
@@ -105,11 +107,11 @@ const Header = () => {
           >
             <Button text="Become a vendor" isOutline />
           </Link>
-          <a target="_blank" rel="noreferrer">
+          <Link href="#waitlist" scroll={false}>
             <Button text="Join waitlist" />
-          </a>
+          </Link>
         </div>
-
+        <Toast />
         <Hamburger
           handlecClick={() => {
             setSidenavOpen(!sidenavOpen);
@@ -134,7 +136,10 @@ const Header = () => {
                   pathIsNotBase && link.includes(pathname) && "!text-blue"
                 }`}
               >
-                <Link href={notPage ? "#" : link}>
+                <Link
+                  href={notPage ? "#" : link}
+                  scroll={link === "/#faqs" ? false : true}
+                >
                   <span className="text-current whitespace-nowrap">
                     {title}
                   </span>
@@ -152,9 +157,9 @@ const Header = () => {
             >
               <Button text="Become a vendor" isOutline fullWidth />
             </Link>
-            <a target="_blank" rel="noreferrer" className="w-full">
+            <Link href="#waitlist" scroll={false} className="w-full">
               <Button text="Join waitlist" className="w-full" />
-            </a>
+            </Link>
           </div>
         </div>
         {/* Mobile side nav */}
