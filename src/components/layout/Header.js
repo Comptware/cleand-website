@@ -31,7 +31,7 @@ const Header = () => {
     },
     {
       title: "Contact Us",
-      link: "mailto:hello@cleand.com",
+      link: "mailto:thecleandapp@gmail.com",
     },
   ];
 

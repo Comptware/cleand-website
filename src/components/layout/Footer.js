@@ -14,24 +14,23 @@ const Footer = () => {
     {
       title: "Contact",
       links: [
-        {
-          title: "thecleandapp@gmail.com",
-          url: "mailto:thecleandapp@gmail.com",
-        },
-        { title: "+234 70 686 200 686", url: "tel:+23470686200686" },
+
+        {title: "thecleandapp@gmail.com", url: "mailto:thecleandapp@gmail.com" },
+        {title: "+234 812 241 8194", url: "tel:+2348122418194" },
+
         {
           socials: [
-            {
-              icon: <FacebookIcon className="scale-[0.9]" />,
-              url: "https://facebook.com/cleand",
-            },
+            // {
+            //   icon: <FacebookIcon className="scale-[0.9]" />,
+            //   url: "https://facebook.com/cleand",
+            // },
             {
               icon: <InstagramIcon className="scale-[0.9]" />,
-              url: "https://instagram.com/cleand",
+              url: "https://instagram.com/thecleandapp?igshid=YmMyMTA2M2Y=",
             },
             {
               icon: <TwitterIcon className="scale-[0.9]" />,
-              url: "https://twitter.com/cleand",
+              url: "https://twitter.com/thecleandapp?s=21&t=vM-Xb-RmMMjNG5WG3lIs_w",
             },
           ],
         },
@@ -45,7 +44,7 @@ const Footer = () => {
         { title: "Support", link: "mailto:help@cleand.com" },
         {
           title: "Contact Us",
-          link: "mailto:hello@cleand.com",
+          link: "mailto:thecleandapp@gmail.com",
         },
       ],
     },

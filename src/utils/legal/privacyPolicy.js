@@ -54,7 +54,7 @@ If we decide to change our privacy policy, we will post those changes on this pa
 
 Contact Information${boldIndicator}\b
 
-If you have any questions or suggestions regarding our privacy policy or cookies, please send an email to our customer service at info@cleand.com${linkIndicator}.
+If you have any questions or suggestions regarding our privacy policy or cookies, please send an email to our customer service at thecleandapp@gmail.com${linkIndicator}.
 `;
 
 export { privacyPolicy };
