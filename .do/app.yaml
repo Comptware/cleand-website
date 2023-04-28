@@ -1,0 +1,11 @@
+name: my-nextjs-app
+region: nyc
+services:
+- name: web
+  github:
+    repo: <github-username>/<repository-name>
+    branch: main
+  environment_slug: node-js
+  routes:
+  - path: /
+    destination: web:3000
